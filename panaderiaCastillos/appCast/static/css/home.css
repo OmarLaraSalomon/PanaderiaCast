@@ -1,0 +1,50 @@
+
+
+
+/* final de header*/
+
+
+/* tarjetas parte inferior */
+.containerCards{
+    margin: 0 auto;
+    display: flex;
+    max-width: 1500px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.card2{
+    justify-content: center;
+    width: 100%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background:#fff;
+    box-shadow:  1px 10px 15px rgb(97, 96, 96);
+    cursor: default;
+    transition: all 400ms ease;
+    align-items: center;
+}
+.card2:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0,4);
+    transform: translate(-3%) ;
+}
+
+.card2 img{
+    width: 200px;
+    height: 220px;
+    display:block;
+    margin:auto;
+}
+
+.card2 .contenido{
+    padding: 15px;
+    text-align: center;
+}
+
+.card2 .contenido p{
+    color:#6a6a6a;
+    
+}
+/* fin tarjetas */
+

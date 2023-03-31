@@ -1,0 +1,135 @@
+{% extends 'social/layout.html' %}
+{% block content%}
+{% load static%}
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles/styles1.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- Formulario-->
+        <!-- <section class="form-register"> -->
+            <form class="form-register"> {% csrf_token %}
+
+                <div class="info">
+                  <h1 class="titt"> Contactanos</h1>
+                  <p class="tecx"> Llena los campos para comunicarte con nosotros.</p>
+                </div>
+          
+                <div class="elementos">
+                  <!-- campos a llenar -->
+                  <div class="elementosForm">
+                    <p>
+                    <label class="etiquetaForm">Nombre*</label>
+                    <input class="controllers" type="text" name="nombre" id="nombreField" placeholder="Ingrese su nombre"
+                      onkeypress="return ch(event)" required>
+                    </p>
+          
+                    <p>
+                    <label class="etiquetaForm">Apellidos* </label>
+                    <input class="controllers" type="text" name="apellido" id="apellidoField" placeholder="Ingrese su apellido"
+                      onkeypress="return ch(event)" required>
+                    </p>
+          
+                    <p>
+                      <label class="etiquetaForm">Correo* </label>
+                    <input class="controllers" type="email" name="correo" id="correoField" placeholder="Ingrese su correo"
+                      required>
+                    </p>
+          
+                    <p>
+                      <label class="etiquetaForm">Telefono* </label>
+                    <input class="controllers" type="tel" name="telefono" id="telefonoField" placeholder="Ingrese su telefono"
+                      onkeypress="return numb(event)" required>
+                    </p>
+          
+                  
+          
+                  </div>
+                  <!-- fin campos a llenar -->
+          
+                  <h4> Comentarios* </h4>
+                  <textarea class="controllers" placeholder="Deje su comentario" id="comentariosField"
+                    onkeypress="return check(event)" required></textarea>
+          <center>
+
+          
+                  <!-- <input class="buttons" type="submit" value="Contactanos"> -->
+                  <button class="buttons" type="submit" onclick="datos()" style="color: white;"> Enviar </button>
+          </center>
+                </div>
+          
+              </form>
+              <!-- </section> -->
+              <!-- Fin Formulario-->
+          
+              <!-- Fin contenedor -->
+            </div>
+          
+          </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+
+function datos() {
+
+if (document.getElementById('comentariosField').value == "") {
+  console.log("te hace falta llenar los campos")
+
+  Swal.fire(
+    'Campos incompletos',
+    '¿Te olvidaste de llenar alguno?',
+    'question'
+  )
+
+} else {
+
+
+  $.ajax({
+    url: "{% url 'mandarcorreo' %}",
+    type: "POST",
+    data: {
+
+      'nombre': $('#nombreField').val(),
+      'apellidos': $('#apellidoField').val(),
+      'correo_electronico': $('#correoField').val(),
+      'telefono': $('#telefonoField').val(),
+      'comentarios': $('#comentariosField').val(),
+      csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+
+    },
+
+    success: function (data) {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Tu informacion ha sido recibida',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      
+                console.log(data)
+                console.log("Success"); 
+    }
+  });
+
+
+}
+
+
+}
+
+</script>
+
+</html>
+
+{% endblock %}

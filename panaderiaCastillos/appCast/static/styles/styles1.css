@@ -1,0 +1,33 @@
+body{
+	background: #ffffff;
+	
+	font-family: 'Varela Round', Helvetica, Arial, serif;
+}
+ th, td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid rebeccapurple;
+ }
+
+
+ h1{
+   text-align: center
+   
+    
+    
+ }
+
+
+
+ img {
+   margin: auto;
+   display: block;
+   }
+
+.container{
+
+   background: #795548;
+  
+}
+

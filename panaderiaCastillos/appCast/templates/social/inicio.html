@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Inicio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .header {
+            overflow: hidden;
+            background-color: #e5d9b6;
+            padding: 20px 110;
+        }
+
+        .header a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 15px;
+            line-height: 25px;
+            border-radius: 5px;
+        }
+
+        .header a:hover {
+            background-color: grey;
+            color: black;
+        }
+
+        .headera.active {
+            background-color: green;
+            color: white;
+        }
+
+        .header-right {
+            float: right;
+        }
+
+        @media screen and (max-width: 500px) {
+            .header a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .header-right {
+                float: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-right">
+            <a href="#">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="#">Carrito</a>
+            <a href="#">Contactanos</a>
+        </div>
+    </div>
+    <div style="padding-left:20px">
+        <center>
+            <h1>Bienvenidos a la Panaderia Castillo's</h1>
+
+            <p>En nuestra panadería encontrarás una amplia variedad de productos frescos y de calidad</p>
+        </center>
+    </div>
+
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <center>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <td data-title="imagen"> <img
+                            src="1.jpeg" height="110"
+                            width="300px">
+
+                </div>
+
+                <div class="item">
+                    <td data-title="imagen"> <img
+                            src="2.jpeg"
+                            height="110" width="300px">
+
+                </div>
+                <div class="item">
+                    <td data-title="imagen"> <img
+                            src="3.jpeg"
+                            height="110" width="300px">
+
+                </div> 
+        </center>
+
+        <br>
+        <br>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+
+   <div id="contenedor_principal">
+        <center><a href="#" style="color: black;">Productos Recomendados</a>
+        </center>
+
+    </div>
+
+</body>
+
+</html>

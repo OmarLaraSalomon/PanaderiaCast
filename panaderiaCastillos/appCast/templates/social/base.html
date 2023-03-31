@@ -1,0 +1,213 @@
+<html>
+
+<head>
+
+  {% load static%}
+
+  <!-- Bootstrap -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="animate.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Fonts -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+  <title>Panaderia y Pasteleria Castillo´s</title>
+
+  <!-- Styles -->
+  <link href="{% static 'css/inicio.css' %}" rel="stylesheet">
+  <link href="{% static 'css/3d.css' %}" rel="stylesheet"> 
+</head>
+
+<body>
+
+
+
+
+
+  <!-- Navbar -->
+  
+  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+    
+
+    <div class="container">
+      <!-- <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="home.html">COBRA KAI KARATE</a> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+
+        
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item {% if request.path == '' %} active {% endif %}  px-lg-4">
+            {% if request.user.is_authenticated %}
+            <a class="nav-link text-uppercase text-expanded"  href="{% url 'home' %}">
+              <h3 > Inicio</h3>
+            </a>
+          </li> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+            
+
+
+          <li class="nav-item  px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'categorias' %}">
+              <h3>Productos</h3>
+            </a>
+          </li>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+
+        <li class="nav-item  px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'productos' %}">
+              <h3>Pedidos</h3>
+            </a>
+          </li>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+          <li class="nav-item  px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'logout' %}">
+              <h3>Cerrar Sesión</h3>
+             </a>     
+            </li>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+
+          <li class="nav-item  px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'mandarcorreo' %}">
+              <h3> Contactanos</h3>
+            </a>
+          </li>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+         
+              <label for="" class="brand">
+                <a  href="{% url 'home' %}"> <img src="{% static 'imgs/logoCast.png' %}" alt=""></a>
+                
+                        </label>   
+                        {% else %}
+
+                        <ul class="navbar-nav mx-auto">
+                          <li class="nav-item {% if request.path == '' %} active {% endif %}  px-lg-4">
+                            
+                            <a class="nav-link text-uppercase text-expanded"  href="{% url 'home' %}">
+                              <h3 > Inicio</h3>
+                            </a>
+                          </li> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+                            
+                
+                
+                          <li class="nav-item  px-lg-4">
+                            <a class="nav-link text-uppercase text-expanded" href="{% url 'categorias' %}">
+                              <h3>Productos</h3>
+                            </a>
+                          </li>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+                
+                        <li class="nav-item  px-lg-4">
+                            <a class="nav-link text-uppercase text-expanded" href="{% url 'productos' %}">
+                              <h3>Pedidos</h3>
+                            </a>
+                          </li>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+
+
+                          <li class="nav-item  px-lg-4">
+                            <a class="nav-link text-uppercase text-expanded" href="{% url 'registro' %}">
+                              <h3>Registro</h3>
+                            </a>
+                          </li>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+
+                          <li class="nav-item  px-lg-4">
+                            <a class="nav-link text-uppercase text-expanded" href="{% url 'login' %}">
+                              <h3>Iniciar Sesión</h3>
+                             </a>     
+                            </li>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+                
+                          <li class="nav-item  px-lg-4">
+                            <a class="nav-link text-uppercase text-expanded" href="{% url 'mandarcorreo' %}">
+                              <h3> Contactar</h3>
+                            </a>
+                          </li>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+                          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+                         
+                              <label for="" class="brand">
+                                <a  href="{% url 'home' %}"> <img src="{% static 'imgs/logoCast.png' %}" alt=""></a>
+                                
+                                        </label>   
+                                        {% endif %}
+  </nav>
+ 
+
+  <h1 class="site-heading text-center text-white d-none d-lg-block">
+
+    <span class="site-heading-lower">Panaderia Castillo´s</span>
+
+  </h1>
+ 
+  </ul>
+  </div>
+  </div>
+  </nav>
+
+
+  <!-- Contenido cambiante -->
+<br><br>
+  {% block content %}
+
+  <h1 class="site-heading text-center text-white d-none d-lg-block">
+
+    
+
+  </h1>
+  {% endblock %}
+
+
+<br>
+<br>
+
+
+
+  <!-- Footer -->
+  <footer class="footer text-faded text-center py-5">
+    <div class="container">
+      <p class="m-0">
+        <a href="https://www.instagram.com/wesker_mexx/" class="link">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+        <a href="#" class="link">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+        <a href="#" class="link">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </p>
+      <a href="{% url 'mandarcorreo' %}">
+        <button type="button" class="btn btn-dark">Contactanos</button>
+
+      </a>
+      <p class="m-0 mbt">
+
+
+        <a href="sample.html" class="link"  style="color: rgb(255, 255, 255);">Panaderia y Pasteleria Castillo´s </a>  
+        <a href="sample.html" class="link"  style="color: rgb(255, 255, 255);">5519690544</a>  &nbsp;
+        
+       
+      </p>
+      <p class="m-0 mbt1"   style="color: rgb(0, 0, 0);">&copy;  Ubicación: Av. Felipe Carrillo Puerto, Luis Donaldo Colosio, Ecatepec de Morelos, Estado de México.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap -->
+  <script src="{% static '/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static '/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+
+</html>

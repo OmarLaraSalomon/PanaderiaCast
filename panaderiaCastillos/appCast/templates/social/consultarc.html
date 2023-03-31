@@ -1,0 +1,96 @@
+{% block content%}
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- Compiled and minified Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<!-- Minified JS library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+
+
+    <meta name="viewport" content="width=device-width, inital-state=1"/>
+    <link rel="stylesheet" href="{% static 'styles/estilos.css' %}">
+</head>
+<body>
+
+  <main>
+
+
+
+
+      <div class="info">
+        <h1 class="titt"> Consultas de correos </h1>
+        <nav class="second-nav">
+
+       
+          </nav>
+       
+      </div>
+   
+
+  
+  
+  
+    <table class="table table-bordered"  > 
+      <thead>
+        <tr style="border: 2px solid black;">
+      
+            <th >id</th>
+      
+          <th >nombre</th>
+      
+          <th>apellido</td>
+
+            <th>correo</td>
+          <th>telefono</th>
+
+          <th>empresa</th>
+
+          <th >cargo </th>
+      
+          <th>comentarios</td>
+
+          
+       
+      
+        </tr>
+      </thead>
+
+
+      <tbody>
+        {% if datos %}
+        {% for correo in datos %}
+        <tr>
+
+            <td>{{correo.id}}</td>
+            <td>{{correo.nombre}}</td>
+            <td>{{correo.apellidos}}</td>
+            <td>{{correo.correo_electronico}}</td>
+            <td>{{correo.telefono}}</td>
+            <td>{{correo.empresa}}</td>
+            <td>{{correo.cargo}}</td>
+            <td>{{correo.comentarios}}</td>
+            
+       
+        </tbody>
+        {% endfor %}
+
+        {% else %}
+
+        <h1>NO HAY REGISTROS</h1>
+
+        {% endif %}
+         </main>
+      </table>
+</body>
+</html>
+{% endblock %}

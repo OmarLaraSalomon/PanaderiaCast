@@ -1,0 +1,22 @@
+
+{% extends 'social/base.html' %}
+
+{% load static %}
+{% block content %} 
+
+{% for servicio in servicios %}
+
+
+
+
+<div> 
+    <p>
+
+    <h2 style="color: white;">{{servicio.titulo}}</h2>
+    <p style="color: white;">{{servicio.contenido}}</p>
+    <p> <img src="{{servicio.imagen.url}}" alt="" width="400px" height="400px"> </p>
+</p> </div>
+
+{% endfor %} 
+
+{% endblock %}

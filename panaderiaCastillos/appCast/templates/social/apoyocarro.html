@@ -1,0 +1,106 @@
+{% load static %}
+<link href="{% static 'css/carrito.css' %}" rel="stylesheet"> 
+
+<div class="container">
+    <div class="text">
+      <span style="--i:1">C</span>
+      <span style="--i:2">A</span>
+      <span style="--i:3">R</span>
+      <span style="--i:4">R</span>
+      <span style="--i:5">I</span>
+      <span style="--i:6">T</span>
+      <span style="--i:7">O</span>
+    
+    </div>
+  </div>
+
+<br>
+
+
+<table class="table table-bordered" style="color: rgb(162, 35, 221);" >
+
+    <thead>
+    <tr>
+    
+    
+    
+        <th colspan="5" class="text-center">
+     Carrito de compras
+    
+        </th>
+        
+    </tr>
+    
+    
+    <tr>
+    <th>Producto</th>
+    <th>Cantidad</th>
+    <th>Suma</th>
+    
+    </tr>
+    
+    </thead>
+    
+    <tbody>
+    
+        {% if request.session.carro.items %}
+        {% for key, value in request.session.carro.items %}
+    
+    
+    <tr class="text-center">
+    
+    <td>{{value.nombre}} </td>
+    <td>{{value.cantidad}} </td>
+    <td>
+     
+    <a href="{% url 'agregar' value.producto_id %}" class="btn btn-sm btn-success">+</a>
+
+    <a href="{% url 'restar' value.producto_id %}" class="btn btn-sm btn-danger">-</a>
+  
+ {{value.precio}}0 MXN$
+</td>
+    
+    
+    </tr>
+   
+            {% endfor %}
+    
+        {% else %}
+        <tr>
+            <td colspan="3">
+    <div class="alert alert-danger text-center">
+    Sin productos
+    </div>
+            </td>
+        </tr>
+        {% endif %} 
+           
+        
+    </tbody>
+    
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                Total: MXN$ {{importe_total_carro}}0
+                
+            </td>
+
+        </tr>
+        
+<!-- comprobar que la persona tiene la sesion abierta y comprobar que hay articulos en el carro -->
+        {% if request.session.carro.items %} 
+        <tr><td colspan="5" style="text-align: center;">
+
+            <a href="{% url 'procesar_pedido' %}" class="btn btn-success">Hacer Pedido</a>
+
+        </td></tr>
+        {% endif %}
+
+
+    </tfoot>
+    
+    
+    </table>
+    
+
+

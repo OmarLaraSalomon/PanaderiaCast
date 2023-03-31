@@ -1,0 +1,129 @@
+{% extends 'social/base.html' %}
+{% load static %}
+{% block content %} 
+
+<link href="{% static 'css/cartas_vuelta.css' %}" rel="stylesheet"> 
+
+
+
+ <title>PRODUCTOS</title>
+
+
+ <div id="wrapper">
+  
+  <p id="stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></p>
+ 
+  <p id="slogan"><span>PRODUCTOS</p>
+  
+</div>
+
+
+
+ 
+
+    <!-- cards -->
+
+     <div class="container" style="background-color:white;">
+
+      
+        
+    
+      <div class="contenidoFlip">
+        <div class="flip-containerA">
+          <div class="cardABC">
+            <div class="frente">
+              <img src=" {% static 'imgs/migajon.png' %}" class="imgmod">
+              <h3>CATEGORIA DISPONIBLE</h3>
+            </div>
+            <div class="dorso">
+              <div class="line"></div>
+              <p>Se denomina así a la parte esponjosa y blanda que se encuentra en el interior del pan. Al cocinarse el pan, el exterior se dora y se convierte en una cubierta crujiente, llamada corteza, la cual evita que la humedad escape del interior del pan, lo cual favorece la formación de la miga.</p>
+            </div>
+          </div>
+          <center>
+          <h2><a href="{% url 'listas' %}">
+           MIGAJÓN
+          </a></h2>
+        </center>
+        </div>
+  
+        <div class="flip-containerA">
+          <div class="cardABC">
+            <div class="frente">
+                <img src=" {% static 'imgs/pasteleria.png' %}" class="imgmod">
+              <h3>CATEGORIA DISPONIBLE</h3>
+            </div>
+            <div class="dorso">
+              <div class="line"></div>
+              <p>La repostería, confitería o pastelería es el arte de preparar o decorar pasteles u otros postres. El término repostería es el que se utiliza para denominar al tipo de gastronomía que se basa en la preparación, y decoración de platos dulces tales como pies, tartas, pasteles, galletas, budines, etc.
+            </div>
+          </div>
+        <center>
+          <h2><a href="{% url 'listas' %}">
+            PASTELERIA
+          </a></h2>
+      </center>
+        </div>
+  
+        <div class="flip-containerA">
+          <div class="cardABC">
+            <div class="frente">
+                <img src=" {% static 'imgs/telera.png' %}" class="imgmod">
+              <h3>CATEGORIA DISPONIBLE</h3>
+            </div>
+            <div class="dorso">
+              <div class="line"></div>
+            <p>La telera es un pan de sal y blanco elaborado con harina de trigo, levadura, agua y sal.​Sus principales caracterísricas son su color, suavidad, tamaño y su forma.Una explicación del origen de este nombre, al parecer avalada por el gremio panadero, es que es una contracción de “tres hileras”, por la forma de dichos panes.</p>
+            </div>
+          </div>
+          <center>
+          <h2><a href="{% url 'listas' %}">
+            TELERAS
+          </a></h2>
+        </center>
+        </div>
+
+
+        
+        <div class="flip-containerA">
+            <div class="cardABC">
+              <div class="frente">
+                  <img src=" {% static 'imgs/reposteria.png' %}" class="imgmod">
+                <h3>CATEGORIA DISPONIBLE</h3>
+              </div>
+              <div class="dorso">
+                <div class="line"></div>
+                <p>La repostería es un oficio que se encarga de preparar y decorar dulces, tales como tortas, ponqués, galletas, cremas, salsas dulces, pasteles, budines y confites.La repostería es considerada como un tipo específico de gastronomía, es decir, como una rama de la cocina profesional, que se especializa en la elaboración de postres.</p>
+              </div>
+            </div>
+            <center>
+            <h2><a href="{% url 'listas' %}">
+               REPOSTERIA
+              </a></h2>
+            </center>
+          </div>
+
+
+
+  
+      </div> 
+  
+      <!-- Fin cards -->
+  
+  
+      
+  
+      
+  
+      <!-- Fin CONTENEDOR  -->
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+{% endblock %}

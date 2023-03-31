@@ -1,0 +1,24 @@
+
+
+h4 {
+    position: absolute;
+    text-align: center;
+    top: 0;
+    right: 0px;
+    background-color: brown;
+    color: black;
+    padding: 2px 7px 4px 21px;
+    clip-path: circle(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+.product-container {
+    margin: 15px;
+    padding: 2px 0px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 black;
+    background-color: white;
+
+
+
+
+}

@@ -1,0 +1,55 @@
+
+{% extends 'social/base.html' %}
+
+{% load static %}
+{% block content %} 
+ 
+<link href="{% static 'css/lista.css' %}" rel="stylesheet"> 
+
+
+<div class="container">
+
+  <div style="float:center">
+
+
+
+  </div>
+
+<div class="row">
+
+
+{% for producto in productos %}
+
+<div class="col-md-3">
+
+<div class="card" style="width: 100%; margin: 5px 5px; ">
+
+  <div class="page-content" >
+    <div class="product-container" >
+      <img src="{{producto.imagen.url}}" class="card-img-top"> 
+
+     <div class="card-body" style="text-align:center ;">
+
+           <h7  class= "card-title"  >{{producto.nombre}}</h7>
+           <h4>$MXN  {{producto.precio}}0</h4>
+          
+
+      <div class="card-footer text-center">
+        <a href="{% url 'agregar' producto.id %}" class="btn btn-success">Agregar al carrito</a>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+{% endfor %} 
+
+
+
+
+{% endblock %}
+
+

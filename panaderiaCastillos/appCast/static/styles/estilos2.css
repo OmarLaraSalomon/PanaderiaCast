@@ -1,0 +1,41 @@
+body{
+	background-color: #632432;
+	font-family: Arial;
+}
+
+
+h1{
+    color: white;
+    background-color: #865e63;
+  }
+
+
+  img{
+    display:block;
+    margin:auto;
+    }
+
+
+
+
+@media (max-width: 30em) {
+    table tr{
+     display: flex;
+     flex-direction: column;
+     border:1px solid gray;
+     padding: 1e;
+     margin-bottom: 1em;
+  
+    }
+  
+    table td[data-title]{
+     display: flex;
+    }
+  
+    table td[data-title]::before{
+     content: attr(data-title);
+     width: 90px;
+     font-weight: bold;
+    }
+     
+  }

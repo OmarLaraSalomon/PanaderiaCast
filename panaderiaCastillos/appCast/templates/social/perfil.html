@@ -1,0 +1,36 @@
+{% extends 'social/feed.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Profile -->
+<div class="profile">
+	<img src="{{ user.profile.image.url }}">
+	<h2>@{{ user.username }}</h2>
+
+	
+			<button><a class="follow-button" href="#">Follow</a></button>
+	
+			
+	
+</div>
+
+<!-- Follow items -->
+<div class="follow">
+	<div>
+		<h5>Post</h5>
+		
+	</div>
+	<div>
+		<h5>Followers</h5>
+		
+
+	</div>
+	<div>
+		<h5>Following</h5>
+	
+	</div>
+</div>
+
+
+{{ block.super }}
+{% endblock %}

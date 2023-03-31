@@ -1,0 +1,135 @@
+{% extends 'social/base.html' %}
+{% load static %}
+{% block content %} 
+
+<link href="{% static 'css/cartas_vuelta.css' %}" rel="stylesheet"> 
+ <link href="{% static 'css/categoria.css' %}" rel="stylesheet"> 
+ <link href="{% static 'css/3d.css' %}" rel="stylesheet"> 
+
+ <title>PRODUCTOS</title>
+
+
+ <div id="wrapper">
+  
+  <p id="stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></p>
+  <p id="title" contenteditable="false" spellcheck="false"><span>REVISIONES</span></p>
+  <p id="slogan"><span>Negative</span> -_- <span>Gaming</span>.</p>
+  
+</div>
+
+
+
+ 
+
+    <!-- cards -->
+
+     <div class="container" style="background-color:white;">
+
+      
+        
+
+         
+          
+          
+           
+          
+          
+            
+          
+         
+    
+      <div class="contenidoFlip">
+        <div class="flip-containerA">
+          <div class="cardABC">
+            <div class="frente">
+              <img src=" {% static 'imgs/womier.jpg' %}" class="imgmod">
+              <h3>CATEGORIA DISPONIBLE</h3>
+            </div>
+            <div class="dorso">
+              <div class="line"></div>
+              <p>El teclado mecánico es aquel en el que cada tecla tiene un interruptor con un sistema mecánico que la acciona. Es decir, al presionar la tecla, la parte dentro del switch se mueve y así completa el “cierre” donde la letra del teclado es registrada.</p>
+            </div>
+          </div>
+          
+          <h2><a href="{% url 'reviteclas' %}">
+           TECLADO
+          </a></h2>
+        </div>
+  
+        <div class="flip-containerA">
+          <div class="cardABC">
+            <div class="frente">
+                <img src=" {% static 'imgs/yampol.jpg' %}" class="imgmod">
+              <h3>CATEGORIA DISPONIBLE</h3>
+            </div>
+            <div class="dorso">
+              <div class="line"></div>
+              <p>En general, presentan un característico diseño ergonómico y ofrecen unas magníficas ventajas en cuanto precisión y sensibilidad.
+                Permiten almacenar distintas configuraciones y algunos hasta cuentan con un sistema de pesas ajustables para modificar su peso. Otra característica habitual de los mouse gamer es el gran número de botones con el que cuentan. </p>
+            </div>
+          </div>
+          
+          <h2><a href="{% url 'revimouses' %}">
+            MOUSE
+          </a></h2>
+        </div>
+  
+        <div class="flip-containerA">
+          <div class="cardABC">
+            <div class="frente">
+                <img src=" {% static 'imgs/astro.png' %}" class="imgmod">
+              <h3>CATEGORIA DISPONIBLE</h3>
+            </div>
+            <div class="dorso">
+              <div class="line"></div>
+              <p>Los audífonos para jugadores son dispositivos con un diseño y características específicas que te permiten vivir al máximo la experiencia de los videojuegos. Los audífonos gamer son indispensables, tanto para gozar de un sonido de excelente calidad como para comunicarse con los demás jugadores en las partidas en línea.</p>
+            </div>
+          </div>
+          
+          <h2><a href="{% url 'reviheads' %}">
+            HEADSET
+          </a></h2>
+        </div>
+
+
+        
+        <div class="flip-containerA">
+            <div class="cardABC">
+              <div class="frente">
+                  <img src=" {% static 'imgs/PS4.png' %}" class="imgmod">
+                <h3>CATEGORIA DISPONIBLE</h3>
+              </div>
+              <div class="dorso">
+                <div class="line"></div>
+                <p>Un mando de videojuegos (gamepad en inglés) es un dispositivo de entrada usado para interactuar con un videojuego ya sea en una consola, o en un ordenador. El mando permite moverse e interactuar con los elementos del juego para realizar las diversas acciones necesarias para cumplir los objetivos.</p>
+              </div>
+            </div>
+            <h2><a href="{% url 'revimandos' %}">
+               MANDO
+              </a></h2>
+          </div>
+
+
+
+  
+      </div> 
+  
+      <!-- Fin cards -->
+  
+  
+      
+  
+      
+  
+      <!-- Fin CONTENEDOR  -->
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+{% endblock %}

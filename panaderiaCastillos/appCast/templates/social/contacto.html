@@ -1,0 +1,202 @@
+{% extends 'social/layout.html' %}
+{% block content%}
+{% load static%}
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles/styles1.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- Formulario-->
+        <!-- <section class="form-register"> -->
+        <form class="form-register" type="POST">
+             {% csrf_token %}
+    
+          <div class="info">
+            <h1 class="titt"> Datos del Contacto</h1>
+            <nav class="second-nav">
+                <a class="feed" href="{% url 'feed' %}">REGRESAR</a>
+                
+             
+              </nav>
+           
+          </div>
+    
+          <div class="elementos">
+            <!-- campos a llenar -->
+            <div class="elementosForm">
+              <p>
+
+               
+                    <input class="controllers"  value="{{user.id}}" type="hidden" name="user" id="userField" placeholder="Ingrese su usuario"
+                      onkeypress="return ch(event)" required>
+                    </p>
+          
+              <label class="etiquetaForm">Nombre*</label>
+              <input class="controllers" type="text" name="nombre" id="nombreField" placeholder="Ingrese su nombre"
+                onkeypress="return ch(event)" required>
+              </p>
+    
+              <p>
+              <label class="etiquetaForm">Apellidos* </label>
+              <input class="controllers" type="text" name="apellido" id="apellidoField" placeholder="Ingrese su apellido"
+                onkeypress="return ch(event)" required>
+              </p>
+    
+            
+              <p>
+                <label class="etiquetaForm">Telefono* </label>
+              <input class="controllers" type="tel" name="telefono" id="telefonoField" placeholder="Ingrese su telefono"
+                onkeypress="return numb(event)" required>
+              </p>
+    
+
+              <p>
+                <label class="etiquetaForm">Telefono de Casa* </label>
+              <input class="controllers" type="tel" name="telefono_Casa" id="telefono_casaField" placeholder="Ingrese su telefono"
+                onkeypress="return numb(event)" required>
+              </p>
+
+
+
+              <p>
+                <label class="etiquetaForm">Fecha de nacimiento* </label>
+              <input class="controllers" type="date" name="fecha" id="nacimientoField"
+                placeholder="Ingrese su fecha de nacimiento" onkeypress="return ch(event)" required>
+              </p>
+    
+              <p>
+                <label class="etiquetaForm">Direccion* </label>
+              <input class="controllers" type="text" name="direccion" id="direccionField" placeholder="Ingrese su direccion"
+                onkeypress="return ch(event)" required>
+              </p>
+
+
+              <p>
+                <label class="etiquetaForm">Contacto de emergencia* </label>
+              <input class="controllers" type="text" name="contacto_emergencia" id="contacto_emergenciaField" placeholder="Ingrese el contacto"
+                onkeypress="return ch(event)" required>
+              </p>
+
+
+              <p>
+                <label class="etiquetaForm">Telefono de emergencia* </label>
+              <input class="controllers" type="tel" name="telefono_emergencia" id="telefono_emergenciaField" placeholder="Ingrese el telefono "
+                onkeypress="return ch(event)" required>
+              </p>
+    
+
+
+              <p>
+                <label class="etiquetaForm">Puesto* </label>
+              <input class="controllers" type="text" name="puesto" id="puestoField" placeholder="Ingrese su puesto"
+                onkeypress="return ch(event)" required>
+              </p>
+
+
+
+              <p>
+                <label class="etiquetaForm">Departamento* </label>
+              <input class="controllers" type="text" name="departamento" id="departamentoField" placeholder="Ingrese su departamento"
+                onkeypress="return ch(event)" required>
+              </p>
+
+
+              
+               <p>
+
+                <label for="liderField">¿Es lider?</label>
+
+                <select name="select" id="liderField">
+                  <option value="True">Si</option>
+                  <option value="False">No</option>
+                 
+                </select>
+
+              </p> 
+
+            </div>
+            <!-- fin campos a llenar -->
+    <center>
+
+   
+    
+            <button class="buttons" type="submit" onclick="datos()" style="color: white;"> Enviar </button>
+     </center>
+          </div>
+    
+         
+
+    </form>
+    <!-- </section> -->
+    <!-- Fin Formulario-->
+
+    <!-- Fin contenedor -->
+  </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+
+function datos(){
+
+
+ 
+  $.ajax({
+        url: "{% url 'contactosregistro' %}",
+        type: "POST",
+        data: {
+          'user': $('#userField').val(),
+          'nombre': $('#nombreField').val(),
+          'apellidos': $('#apellidoField').val(),
+          'telefono': $('#telefonoField').val(),
+          'telefono_casa': $('#telefono_casaField').val(),
+          'nacimiento': $('#nacimientoField').val(),
+          'direccion': $('#direccionField').val(),
+          'contacto_emergencia': $('#contacto_emergenciaField').val(),
+          'telefono_emergencia': $('#telefono_emergenciaField').val(),
+          'puesto': $('#puestoField').val(),
+          'departamento': $('#departamentoField').val(),
+          'lider': $('#liderField').val(),
+         
+         
+          csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+
+        },
+        
+        
+        success: function (data) {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Tu informacion ha sido recibida',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          /* 
+                    console.log(data)
+                    console.log("Success"); */
+        }
+      });
+
+
+    
+
+    
+    
+ 
+      
+}
+</script>
+</html>
+{% endblock %}
